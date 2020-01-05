@@ -1,0 +1,19 @@
+.wrap-div{
+  width: 100%;
+  margin: 20px auto;
+  height: 300px;
+  overflow: auto;
+  font-size: medium;
+}
+
+table {
+  width: 100%;
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.book-row:hover{
+  background: #777;
+}

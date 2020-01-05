@@ -1,0 +1,17 @@
+.full-width-table {
+  width: 100%;
+}
+
+.wrap-div{
+  width: 60%;
+  margin: 20px auto;
+  min-height: 820px;  
+  overflow: auto;
+  font-size: medium;
+}
+
+*{
+  font-size: medium;
+}
+
+.markToDel { } 

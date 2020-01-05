@@ -1,0 +1,35 @@
+<h3 mat-dialog-title>User</h3>
+<mat-dialog-content>Data of this user.</mat-dialog-content>
+
+<form class="col-4" #editForm='ngForm'>
+  <div>
+    <input class="form-control" type='number' autocomplete="off" [(ngModel)]='this.data.user.id'
+      placeholder="Номер пользователя" name="userId">
+  </div>
+
+  <div>
+    <input class="form-control" type="text" autocomplete="off" [(ngModel)]='this.data.user.userName' 
+    placeholder="Имя" name="userName">
+  </div>
+
+  <div>
+    <input class="form-control" type="text" autocomplete="off" [(ngModel)]='this.data.user.password'
+      placeholder="Пароль" name="password">
+  </div>
+
+  <div>
+    <input class="form-control" type="text" autocomplete="off" [(ngModel)]='this.data.user.libsCount'
+      placeholder="Количество библиотек" name="libsCount">
+  </div>
+
+  <div>
+    <input class="form-control" type="text" autocomplete="off" [(ngModel)]='this.data.user.booksCount'
+      placeholder="Количество книг" name="booksCount">
+  </div>
+
+  <button (click)="editUser(editForm)" class="btn btn-success form-control">Подтвердить изменения</button>
+</form>
+
+<mat-dialog-actions>
+  <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close='false'>Close</button>
+</mat-dialog-actions>

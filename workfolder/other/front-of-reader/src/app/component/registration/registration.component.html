@@ -1,0 +1,27 @@
+<div class="container">  
+  <form class="col-4">
+  <div>
+    <input class="form-control"  autocomplete="off" [(ngModel)]="newUser.id" placeholder="Номер пользователя" name="Employee Id">
+  </div>
+
+  <div>
+    <input class="form-control" autocomplete="off" type="text" [(ngModel)]="newUser.userName" placeholder="Имя" name="name">
+  </div>
+
+  <div>
+    <input class="form-control" autocomplete="off" type="text" [(ngModel)]="newUser.password" placeholder="Пароль" name="author"
+      id="idofpassword">
+  </div>
+
+  <div>
+    <input class="form-control" autocomplete="off" type="text" [(ngModel)]="newUser.libsCount" placeholder="Количество библиотек" name="name">
+  </div>
+
+  <div>
+    <input class="form-control" autocomplete="off" type="text" [(ngModel)]="newUser.booksCount" placeholder="Количество книг" name="author"
+      id="idofpassword">
+  </div>
+
+  <button (click)="createUser()" class="btn btn-success form-control">Зарегистрироваться</button>
+  </form>
+</div>

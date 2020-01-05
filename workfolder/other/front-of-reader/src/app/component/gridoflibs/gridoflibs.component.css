@@ -1,0 +1,19 @@
+.full-width-table {
+  width: 100%;
+}
+
+.wrap-div{
+  width: 60%;
+  margin: 20px auto;
+  height: 600px;
+  overflow: auto;
+  font-size: medium;
+}
+
+table {
+  width: 100%;
+}
+
+ul{
+  text-decoration-style: none; 
+}

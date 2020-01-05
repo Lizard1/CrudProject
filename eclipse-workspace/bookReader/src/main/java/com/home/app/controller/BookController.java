@@ -1,0 +1,51 @@
+package com.home.app.controller;
+
+import java.util.*;
+import org.springframework.web.bind.annotation.*;
+
+import com.home.app.converter.BookConverter;
+import com.home.app.dto.BookDto;
+import com.home.app.entity.Book;
+import com.home.app.service.BookService;
+
+@RestController
+@RequestMapping("/book")
+@CrossOrigin(origins = "http://localhost:4200")
+public class BookController {
+
+	private final BookService bookService;
+	
+	public BookController(final BookService bookService) {
+		this.bookService = bookService;
+	}
+	
+	@PostMapping("/createup")
+	public BookDto createUpdate(@RequestBody BookDto bookdto) {		
+		return BookConverter.convertBook(bookService.createOrUpdate(bookdto));
+	}
+
+	@GetMapping("/{id}")
+	public BookDto readBook(@PathVariable("id") Long id) {
+		return BookConverter.convertBook(bookService.findById(id));
+	}
+
+	@GetMapping("/all")
+	public Collection<BookDto> findAll() {
+		Collection<BookDto> booksDto = new ArrayList<>();
+		Iterable<Book> books = bookService.findAll();
+		for (Book book : books) {			
+			booksDto.add(BookConverter.convertBook(book));
+		}
+		return booksDto;
+	}
+
+	@DeleteMapping("/delete/{id}")
+	public void deleteById(@PathVariable("id") Long id) {
+		bookService.deleteById(id);
+	}
+
+	@DeleteMapping("/delete/all")
+	public void deleteAll() {
+		bookService.deleteAll();
+	}
+}

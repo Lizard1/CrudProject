@@ -1,0 +1,25 @@
+.wrap-div{
+    width: 100%;
+    margin: 20px auto;
+    max-height: 60%;
+    min-height: 40%;
+    overflow: auto;
+    font-size: medium;
+  }
+
+  li{
+    list-style-type: none;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  tr.example-detail-row {
+    height: 0;
+  }
+
+  
+tr.libs-row:hover {
+  background: #777;
+}

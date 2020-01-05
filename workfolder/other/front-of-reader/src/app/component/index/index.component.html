@@ -1,0 +1,210 @@
+<!-- <button class="btn btn-danger" (click)="showAllBooks()">Load all books button</button> -->
+<!-- <div class="container-fluid">
+  <h6 class="title">BOOKS</h6>
+  <div class="row">
+    <form (submit)="getOneBook(bookId.value)" class="col-2">
+      <h6>Показать 1 книгу</h6>
+      <input type="text" placeholder="some text" value="9" class="form-control" #bookId>
+      <button type="submit" class="btn btn-info form-control">Enter</button>
+    </form>
+
+    <form (submit)="showAllBooks()" class="col-2">
+      <h6>Показать все книги</h6>
+      <button type="submit" class="form-control btn btn-info">Enter</button>
+    </form>
+
+    <form (submit)="deleteBook(delBookId.value)" class="col-2">
+      <h6>Удалить 1 книгу</h6>
+      <input class="form-control" type="text" #delBookId>
+      <button type="submit" class="btn btn-danger form-control">Dlete one</button>
+    </form>
+
+    <form (submit)="delAllBooks()" class="col-2">
+      <h6>Удалить все книги</h6>
+      <button type="submit" class="btn btn-danger form-control">DELETE ALL</button>
+    </form>
+
+    <form class="col-2">
+      <div>
+        <h6><label for="idofbook">Номер</label></h6>
+        <input class="form-control" [(ngModel)]="newBook.id" placeholder="Номер книги" name="Employee Id" id="idofbook">
+      </div>
+
+      <div>
+        <h6><label for="name">Название</label></h6>
+        <input class="form-control" type="text" [(ngModel)]="newBook.bookName" placeholder="Имя" name="name" id="name">
+      </div>
+
+      <div>
+        <h6><label for="author">Автор</label></h6>
+        <input class="form-control" type="text" [(ngModel)]="newBook.authorName" placeholder="Автор" name="author"
+          id="author">
+      </div>
+
+      <button (click)="createBook()" class="btn btn-success form-control">Создать</button>
+    </form>
+
+    <ul>
+      <li>{{oneBook2.id}}</li>
+      <li>{{oneBook2.bookName}}</li>
+      <li>{{oneBook2.authorName}}</li>
+    </ul>
+
+    <ul *ngFor='let book of books'>
+      <li>{{book.id}}</li>
+      <li>{{book.bookName}}</li>
+      <li>{{book.authorName}}</li>
+    </ul>
+  </div>
+
+
+  <div>
+    <h6 class="title">USERS</h6>
+    <div class="row">
+
+      <form (submit)="getOneUser(userId.value)" class="col-2">
+        <input class="form-control" type="text" placeholder="Show 1 user" value="11" #userId>
+        <button type="submit" class="btn btn-info form-control">Enter</button>
+      </form>
+
+      <form (submit)="showAllUsers()" class="col-2">
+        <h6>Показать всех пользователей</h6>
+        <button type="submit" class="btn btn-info form-control">Enter</button>
+      </form>
+
+      <form (submit)="deleteUser(delUserId.value)" class="col-2">
+        <input type="text" placeholder="Del 1 user" class="form-control" #delUserId>
+        <button type="submit" class="btn btn-info form-control">Enter</button>
+      </form>
+
+      <form (submit)="delAllUsers()" class="col-2">
+        <h6>Dell all users</h6>
+        <button type="submit" class="btn btn-danger form-control">DELETE ALL</button>
+      </form>
+
+      <form class="col-2">
+        <div>
+          <input class="form-control" [(ngModel)]="newUser.id" placeholder="Номер пользователя" name="Employee Id">
+        </div>
+
+        <div>
+          <input class="form-control" type="text" [(ngModel)]="newUser.userName" placeholder="Имя" name="name">
+        </div>
+
+        <div>
+          <input class="form-control" type="text" [(ngModel)]="newUser.password" placeholder="Пароль" name="author"
+            id="idofpassword">
+        </div>
+
+        <button (click)="createUser()" class="btn btn-success form-control">Создать</button>
+      </form>
+
+      <ul *ngFor='let user of users'>
+        <li>{{user.id}}</li>
+        <li>{{user.userName}}</li>
+        <li>{{user.password}}</li>
+      </ul>
+
+      <h6>{{oneUser2.id}}</h6>
+      <h6>{{oneUser2.userName}}</h6>
+      <h6>{{oneUser2.password}}</h6>
+    </div>
+  </div>
+
+  <div>
+
+    <h6 class="title">LIBRARIES</h6>
+    <div class="row">
+      <form (submit)="getOneLib(libId.value)" class="col-2">
+        <input class="form-control" type="text" placeholder="text" value="4" #libId>
+        <button class="form-control btn btn-info" type="submit">Lib</button>
+      </form>
+
+      <form (submit)="showAllLibs()" class="col-2">
+        <h6>Показать все либы</h6>
+        <button type="submit" class="btn btn-info form-control">Libs</button>
+      </form>
+
+      <form (submit)="deleteLibrary(delLibId.value)" class="col-2">
+        <input class="form-control" type="text" placeholder="del 1 lb" #delLibId>
+        <button type="submit" class="btn btn-danger form-control">Delete one</button>
+      </form>
+
+      <form (submit)="delAllLibs()" class="col-2">
+        <h6>Del all libs</h6>
+        <button type="submit" class="btn btn-danger form-control">DELETE ALL</button>
+      </form>
+
+      <form class="col-2">
+        <div>
+          <h6><label for="idoflib">Номер</label></h6>
+          <input class="form-control" [(ngModel)]="newLib.id" placeholder="Номер библиотеки" name="Book_id"
+            id="idoflib">
+        </div>
+        <div>
+          <h6><label for="name">Название</label></h6>
+          <input class="form-control" type="text" [(ngModel)]="newLib.libraryName" placeholder="Название"
+            name="Name of lib" id="name">
+        </div>
+        <button class="form-control btn btn-success" (click)="createLib()">Создать</button>
+      </form>
+
+      <ul *ngFor='let lib of libs'>
+        <li>{{lib.id}}. {{lib.libraryName}}</li>
+      </ul>
+      <h6>One lib: {{oneLib2.id}}. {{oneLib2.libraryName}}</h6>
+    </div>
+  </div>
+
+  <div>
+    <h6 class="title">Stats</h6>
+    <div class="row">
+
+      <form (submit)="showOneStat(statId.value)" class="col-2">
+        <input class="form-control" type="text" placeholder="1 stat" value="16" #statId>
+        <button class="form-control btn btn-info" type="submit">Enter</button>
+      </form>
+
+      <form (submit)="showAllStat()" class="col-2">
+        <h6>Show all stat</h6>
+        <button class="form-control btn btn-info" type="submit">All stats</button>
+      </form>
+
+      <form (submit)="deleteStat(delstatId.value)" class="col-2">
+        <input class="form-control" type="text" placeholder="delete 1 stat" #delstatId>
+        <button class="form-control btn btn-danger" type="submit">Delete one</button>
+      </form>
+
+      <form (submit)="delAllStat()" class="col-2">
+        <h6>Del all stats</h6>
+        <button class="form-control btn btn-danger" type="submit">DELETE ALL</button>
+      </form>
+
+      <form class="col-2">
+        <div>
+          <h6><label for="idofstat">Номер</label></h6>
+          <input class="form-control" [(ngModel)]="newStat.id" placeholder="Номер библиотеки" name="Book id"
+            id="idofstat">
+        </div>
+        <div>
+          <h6><label for="name">Название</label></h6>
+          <input class="form-control" type="date" [(ngModel)]="newStat.date" placeholder="Название" name="Name of lib"
+            id="name">
+        </div>
+        <button class="form-control btn btn-success" (click)="createStat()">Создать</button>
+      </form>
+
+      <ul *ngFor='let stat of stats'>
+        <li>{{stat.id}}. {{stat.date}}</li>
+      </ul>
+      <h6>One stat: {{oneStat2.id}}. {{oneStat2.date}}</h6>
+    </div>
+  </div>
+</div>-->
+ <!-- <app-grid></app-grid>
+
+<app-gridoflibs></app-gridoflibs>  -->
+
+<app-users></app-users>
+
+<button class="btn btn-success" (click)="enterUser()">Press me</button>

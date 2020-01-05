@@ -1,0 +1,16 @@
+*{
+    font-size: medium;
+}
+
+ul{
+    margin-left: 0;
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+   
+div>form{
+    min-height: 820px;
+}
